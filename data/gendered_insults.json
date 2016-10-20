@@ -1,0 +1,764 @@
+{
+  "children": [
+	  {
+	    "count": 3,
+	    "name": "Whoopi Goldberg",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 93,
+	    "name": "Jeb Bush",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Joe McQuaid",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Stephanie Rawlings-Blake",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 2,
+	    "name": "Hugh Hewitt",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Joe Biden",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Tavis Smiley",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 2,
+	    "name": "Debbie Wasserman Schultz",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 3,
+	    "name": "Maggie Haberman",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Charles Blow",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 2,
+	    "name": "Bernard Goldberg",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 7,
+	    "name": "Penn Jillette",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 6,
+	    "name": "George Pataki",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Molly Sims",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 2,
+	    "name": "Russell Moore",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Frank VanderSloot",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Melinda Henneberger",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Marty Walsh",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 26,
+	    "name": "Bernie Sanders",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 2,
+	    "name": "Ruth Marcus",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Ben Cardin",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 5,
+	    "name": "Bill de Blasio",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 6,
+	    "name": "Tony Schwartz",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 2,
+	    "name": "Brit Hume",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 12,
+	    "name": "George Will",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 10,
+	    "name": "Mika Brzezinski",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Errol Louis",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 2,
+	    "name": "Cory Booker",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 3,
+	    "name": "Alicia Machado",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 2,
+	    "name": "John Legere",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 54,
+	    "name": "Elizabeth Warren",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Woody Johnson",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 25,
+	    "name": "Barack Obama",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Charles Koch",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 3,
+	    "name": "Chris Stirewalt",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 2,
+	    "name": "Donny Deutsch",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 2,
+	    "name": "Mark Halperin",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Steve Rattner",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Rodrigo Duterte",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 24,
+	    "name": "Mitt Romney",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 25,
+	    "name": "John Kasich",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Bakari Sellers",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 2,
+	    "name": "Shep Smith",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 2,
+	    "name": "Arianna Huffington",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Sam Liccardo",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "George H.W. Bush",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Hallie Jackson",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 4,
+	    "name": "Tim Kaine",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Huma Abedin",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Paulina Vega",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Willie Geist",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "John Harwood",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 2,
+	    "name": "Anthony D. Weiner",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 3,
+	    "name": "Tim O'Brien",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Ronda Rousey",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 1,
+	    "name": "John King",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 5,
+	    "name": "Rich Lowry",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Lincoln Chafee",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Barbara Res",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 8,
+	    "name": "Maureen Dowd",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 12,
+	    "name": "Stuart Stevens",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Lisa Belkin",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 2,
+	    "name": "Cokie Roberts",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 3,
+	    "name": "Clare O'Connor",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 7,
+	    "name": "Bob Vander Plaats",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 38,
+	    "name": "Megyn Kelly",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 2,
+	    "name": "Tom Llamas",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 8,
+	    "name": "Carly Fiorina",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 371,
+	    "name": "Hillary Clinton",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 4,
+	    "name": "Marc Thiessen",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Paul Singer",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 2,
+	    "name": "Ben Schreckinger",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Frank Bruni",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 4,
+	    "name": "Ben Sasse",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 3,
+	    "name": "David Gregory",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 8,
+	    "name": "Bill Kristol",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 6,
+	    "name": "Frank Luntz",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 3,
+	    "name": "Ana Navarro",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 4,
+	    "name": "Meghan McCain",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 2,
+	    "name": "Jeff Horwitz",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 2,
+	    "name": "Amy Chozick",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 48,
+	    "name": "Karl Rove",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 4,
+	    "name": "Lawrence O'Donnell",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 7,
+	    "name": "Ben Carson",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 3,
+	    "name": "Martin O'Malley",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 4,
+	    "name": "Joe Scarborough",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Neil Young",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Dana Perino",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 3,
+	    "name": "Major Garrett",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 3,
+	    "name": "Tom Ridge",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 6,
+	    "name": "Elizabeth Beck",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 4,
+	    "name": "Samuel L. Jackson",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Nikki Haley",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 8,
+	    "name": "Erick Erickson",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 4,
+	    "name": "Harry Hurt III",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 4,
+	    "name": "Sopan Deb",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Charles Lane",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Jeff Zucker",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 82,
+	    "name": "Marco Rubio",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Alisyn Camerota",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 4,
+	    "name": "George W. Bush",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Anderson Cooper",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 2,
+	    "name": "Jennifer Rubin",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 9,
+	    "name": "Charles Krauthammer",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 3,
+	    "name": "John Sununu",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 8,
+	    "name": "Cheri Jacobus",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 2,
+	    "name": "Serge Kovaleski",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 110,
+	    "name": "Ted Cruz",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 3,
+	    "name": "Michael Bloomberg",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 3,
+	    "name": "Bobby Jindal",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 2,
+	    "name": "Rick Wilson",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 3,
+	    "name": "Michael Nutter",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 3,
+	    "name": "Graydon Carter",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 3,
+	    "name": "Jonathan Martin",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 3,
+	    "name": "Michael J. Morell",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 5,
+	    "name": "Gonzalo P. Curiel",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 4,
+	    "name": "Jeff Flake",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Joy Behar",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 15,
+	    "name": "Lindsey Graham",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 2,
+	    "name": "John Roberts",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 2,
+	    "name": "Paul Begala",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Mark Cuban",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 8,
+	    "name": "S.E. Cupp",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 8,
+	    "name": "Rand Paul",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Mary Katharine Ham",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Kasie Hunt",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 7,
+	    "name": "Rick Perry",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 2,
+	    "name": "Carl Cameron",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Chris Christie",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 6,
+	    "name": "Scott Walker",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 18,
+	    "name": "Glenn Beck",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 10,
+	    "name": "John McCain",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 2,
+	    "name": "Don Lemon",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 3,
+	    "name": "Michael Barbaro",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 2,
+	    "name": "John R. Allen",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Angela Merkel",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 20,
+	    "name": "Chuck Todd",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 6,
+	    "name": "David Brooks",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Rick Scott",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "John Oliver",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 2,
+	    "name": "Nicolle Wallace",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 4,
+	    "name": "Katie Couric",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 7,
+	    "name": "Katy Tur",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 2,
+	    "name": "Juan Williams",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Brent Bozell",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 4,
+	    "name": "Mort Zuckerman",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 2,
+	    "name": "Alwaleed bin Talal",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 5,
+	    "name": "Robert Gates",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 4,
+	    "name": "Ruth Bader Ginsburg",
+	    "gender": "woman"
+	  },
+	  {
+	    "count": 2,
+	    "name": "Colin Powell",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 1,
+	    "name": "Dan Henninger",
+	    "gender": "man"
+	  },
+	  {
+	    "count": 8,
+	    "name": "Bill Clinton",
+	    "gender": "man"
+	  }
+	]
+}

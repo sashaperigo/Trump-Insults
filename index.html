@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles.css" type="text/css" media="all">
+<body>
+    <div class="container">
+        <script src="node_modules/d3/d3.min.js"></script>
+        <script src="d3-legend.js"></script>
+        <script>      
+            var WIDTH = 680;
+            var HEIGHT = 700;
+            var BUBBLE_PADDING = 5;
+
+            var LEGEND_X = 475;
+            var LEGEND_Y = 550;
+            var LEGEND_TEXT_X = LEGEND_X + 17;
+            var LEGEND_TEXT_Y = LEGEND_Y + 13;
+
+            var COLORS = ["lavender"];//#6BAFFC"];//, "#E98ADD", "lavender"];//["yellow", "lightgreen", "lightblue", "lavender"];;
+
+            var MIN_START_RADIUS = 10;
+            var MAX_START_RADIUS = 80;
+            var MIN_RADIUS_SCALE_FACTOR = 5;
+            var MAX_RADIUS_SCALE_FACTOR = 1.5;
+
+            var TRANSITION_LENGTH = 750;
+
+            var NYT_LINK = "http://www.nytimes.com/interactive/2016/01/28/upshot/donald-trump-twitter-insults.html";
+
+            var isClicked = false;
+            var selectedElement = null;
+
+            var svg = d3.select("body").append("svg")
+                .attr("width", WIDTH)
+                .attr("height", HEIGHT)
+                .attr("class", "bubble")
+                .append("g");
+
+            var bubble = d3.layout.pack()
+                .sort(null)
+                .size([WIDTH, HEIGHT])
+                .value(function(d) { return d.count; })
+                .radius(function(value) { return getStartRadius(value); })
+                .padding(BUBBLE_PADDING);
+
+            d3.json("/data/gendered_insults.json", function(data) {
+                var node = svg.selectAll(".node")
+                    .data(bubble.nodes(data)
+                    .filter(function(d) { return !d.children; }))
+                    .enter()
+                    .append("g")
+                        .attr("class", "node")
+                        .attr("transform", function(d) {
+                            return "translate(" + d.x + "," + d.y + ")";
+                        })
+                        .on("mouseover", mouseoverC)
+                        .on("mouseout", mouseoutC)
+                        .on("click", click);
+
+                node.append("circle")
+                    .attr("r", function(d) { return getStartRadius(d.count); })
+                    .style("fill", function(d) {
+                        var index = Math.floor(Math.random() * COLORS.length);
+                        d.fill = COLORS[index];
+                        return d.fill;
+                    })
+                    .style("stroke", "gray")//function(d) { return d3.rgb(d.fill).darker(); })
+                    .style("stroke-width", "1px");
+
+                node.append("text")
+                    .style("text-anchor", "middle")
+                    .style("font-size", getTextSize)
+                    .style("font-family", "font-family: -apple-system, BlinkMacSystemFont, \"helvetica neue\", helvetica, sans-serif")
+                    .style("fill", function(d) { return d3.rgb("gray").darker().darker(); })
+                    .text(function(d) { return d.name; });
+            });
+
+            // // Legend Border
+            // svg.append("rect")
+            //     .attr("transform", "translate(" + LEGEND_X + "," + LEGEND_Y + ")")
+            //     .attr("height", "50px")
+            //     .attr("width", "125px")
+            //     .style("fill", "none")
+            //     .style("stroke", "#E5E5E5")
+            //     .style("stroke-width", "1px");
+
+            // // Legend
+            // var ordinal = d3.scale.ordinal()
+            //   .domain(["Man", "Woman"])
+            //   .range([MAN_COLOR, WOMAN_COLOR]);
+
+            // svg.append("g")
+            //     .attr("class", "legendOrdinal")
+            //     .attr("transform", "translate(" + LEGEND_TEXT_X + "," + LEGEND_TEXT_Y + ")")
+            //     .style("font-size", "10pt");
+
+            // var legendOrdinal = d3.legend.color()
+            //     .shape("path", d3.svg.symbol().size(150)())
+            //     .shapePadding(10)
+            //     .scale(ordinal);
+
+            // svg.select(".legendOrdinal")
+            //     .call(legendOrdinal);
+
+            function getTextSize(d) {
+                var len = d.name.length;
+                var wideCharacters = d.name.replace(/[^HRGWwMm]/g, "").length;
+                for (i = 0; i < wideCharacters; i++) {
+                    len++;
+                }
+                if (d.name == "Mary Katharine Ham") {
+                    len += 2;
+                }
+                var size = (d.r / 3) * (7 / len) + 1;
+                return Math.round(size) + "px";
+            }
+
+            d3.selection.prototype.moveToFront = function() {
+              return this.each(function() {
+                this.parentNode.appendChild(this);
+              });
+            };
+
+            // Scales the radius of the circle based on the number of insults.
+            function getStartRadius(count) {
+                var radiusScale = d3.scale.linear()
+                    .domain([0, 20])
+                    .range([MIN_START_RADIUS, MAX_START_RADIUS]);
+                return radiusScale(Math.sqrt(count));
+            }
+
+            function mouseoverC() {
+                if (!isClicked) {
+                    enlargeBubble(d3.select(this));
+                }
+            }
+
+            function mouseoutC() {
+                if (!isClicked) {
+                    shrinkBubble(d3.select(this));
+                }
+            }
+
+            function enlargeBubble(node) {
+                var radiusTransitionScale = d3.scale.linear()
+                    .domain([0, 20])
+                    .range([MIN_START_RADIUS * MIN_RADIUS_SCALE_FACTOR, MAX_START_RADIUS * MAX_RADIUS_SCALE_FACTOR]);
+                
+                node.moveToFront();
+
+                node.select("circle").transition()
+                    .duration(TRANSITION_LENGTH)
+                    .attr("r", function(d) {
+                        d.r = radiusTransitionScale(Math.sqrt(d.count));
+                        return d.r;
+                    })
+                    .style("fill", "#f9f9f9");//"#E5E5E5");
+
+                node.select("text").transition()
+                    .duration(TRANSITION_LENGTH)
+                    .style("font-size", getTextSize);               
+            }
+
+            function shrinkBubble(node) {
+                node.select("circle").transition()
+                    .duration(TRANSITION_LENGTH)
+                    .attr("r", function(d) { 
+                        d.r = getStartRadius(d.count);
+                        return d.r;
+                    })
+                    .style("fill", function(d) { return d.fill; });
+                node.select("text").transition()
+                    .duration(TRANSITION_LENGTH)
+                    .style("font-size", getTextSize);    
+            }
+
+            function click() {
+                var thisNode = d3.select(this);
+                if (!isClicked) {
+                    selectElement(thisNode);
+                } else {
+                    var previouslySelectedElement = selectedElement;
+                    unselectElement();
+                    if (thisNode.text() !== previouslySelectedElement.text()) {
+                        enlargeBubble(thisNode);
+                        selectElement(thisNode);
+                    }
+                }
+            }
+
+            function selectElement(node) {
+                console.log("select element");
+                isClicked = true;
+                selectedElement = node;
+
+                var intro = d3.select(".intro");
+                intro.style("visibility", "hidden");
+
+                var panel = d3.select(".info-panel");
+                var name = panel.select(".name");
+                name.append("text")
+                    .text(node.text());
+                panel.style("visibility", "visible");
+            }
+
+            function unselectElement() {
+                var panel = d3.select(".info-panel");
+                panel.style("visibility", "hidden");
+                panel.select(".name").select("text").remove();
+
+                var intro = d3.select(".intro");
+                intro.style("visibility", "visible");
+                
+                shrinkBubble(selectedElement);
+                isClicked = false;
+                selectedElement = null;           
+            }
+
+        </script>
+        <div class="sidebar">
+            <h1>Trump Twitter Explorer</h1>
+            <div class="intro">
+                <p>In the first Vice Presidential debate, Democratic candidate Tim Kaine <a href="">accused Donald Trump and Mike Pence of running an "insult driven campaign,"</a> a claim Pence vehemently denied.</p>
+                <p><a href="http://www.nytimes.com/interactive/2016/01/28/upshot/donald-trump-twitter-insults.html" target="blank">The New York Times</a> has collected a list of hundreds of insults Trump has lobbed at opponents since the inception of his campaign in June 2015.</p>
+                <p>Click on a name to the right or search below to explore and judge for yourself whether you agree with Kaine or Pence.</p>
+            </div>
+            <div class="info-panel">
+                <h3 class="name"></h3>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.</p>
+                <p>Eirmod intellegat complectitur an mea, zril dicam vivendo nec ne, usu erat latine no. Iuvaret sanctus veritus duo ex, tale noster postulant cum an, ad eum dicant legimus.</p>
+<!--                 <p>Some choice words include:</p>
+                <div class="quotes">
+                    <p><a href="">"pathetic"</a></p>
+                    <p><a href="">"will NEVER Make America Great Again"</a></p>
+                    <p><a href="">"SO SAD"</a></p>
+                </div> -->
+            </div>
+            <!-- <div class="credits">Made with ❤️  by <a href="">Sasha Perigo</a>. Data from <a href="http://www.nytimes.com/interactive/2016/01/28/upshot/donald-trump-twitter-insults.html">The New York Times</a>.</div> -->
+        </div>
+    </div>
+</body>
