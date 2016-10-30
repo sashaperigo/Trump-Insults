@@ -1,0 +1,33 @@
+  {
+    "count": 4,
+    "bio": "Katherine Anne \"Katie\" Couric is an American journalist and author. She currently serves as Yahoo! Global News Anchor. Couric has been a television host on all Big Three television networks in the United States. ",
+    "insults": [
+      {
+        "tweet": "Katie Couric, the third rate reporter, who has been largely forgotten, should be ashamed of herself for the fraudulent editing of her doc.",
+        "date": "2016-05-31T23:14:42+0000",
+        "url": "https://twitter.com/realDonaldTrump/status/737784398515441664",
+        "quotes_vec": "third rate reporter"
+      },
+      {
+        "tweet": "Katie Couric, the third rate reporter, who has been largely forgotten, should be ashamed of herself for the fraudulent editing of her doc.",
+        "date": "2016-05-31T23:14:42+0000",
+        "url": "https://twitter.com/realDonaldTrump/status/737784398515441664",
+        "quotes_vec": "has been largely forgotten"
+      },
+      {
+        "tweet": "Katie Couric, the third rate reporter, who has been largely forgotten, should be ashamed of herself for the fraudulent editing of her doc.",
+        "date": "2016-05-31T23:14:42+0000",
+        "url": "https://twitter.com/realDonaldTrump/status/737784398515441664",
+        "quotes_vec": "should be ashamed of herself"
+      },
+      {
+        "tweet": "Katie Couric, the third rate reporter, who has been largely forgotten, should be ashamed of herself for the fraudulent editing of her doc.",
+        "date": "2016-05-31T23:14:42+0000",
+        "url": "https://twitter.com/realDonaldTrump/status/737784398515441664",
+        "quotes_vec": "fraudulent editing"
+      }
+    ],
+    "name": "Katie Couric",
+    "woman": true,
+    "man": false
+  }

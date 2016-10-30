@@ -1,5 +1,6 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica, sans-serif;
+    font-size: 11pt;
 }
 h1 {
     text-align: center;
@@ -46,6 +47,7 @@ svg {
     font-weight: 0;
 }
 .info-panel {
+    max-height: 700px;
     background: #f9f9f9; /*#E5E5E5;*/
     border: 1px solid lightgray;
     border-radius: 30px;
@@ -60,8 +62,18 @@ svg {
     visibility: hidden;
     position: absolute;
 }
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: center;
+    font-style: italic;
+    line-height: 2em;
+    font-size: 10pt;
+}
+.count {
+    font-weight: bold;
+}
 .credits {
     text-align: center;
     font-size: 9pt;
-    
 }
