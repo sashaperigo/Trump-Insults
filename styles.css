@@ -2,11 +2,13 @@ html,
 body {
     font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica, sans-serif;
     font-size: 8pt;
+    font-size: 2.75vw;
 }
 
 h1 {
     text-align: center;
     font-size: 12pt;
+    font-size: 5vw;
 }
 
 a {
@@ -18,20 +20,17 @@ a {
 .container {
     display: block;
     margin: 0 auto;
-    max-width: 1250px;
 }
 
 .svg-container {
-    display: inline-block;
     position: relative;
-    padding: 0 auto; /*0 0 0 1em;*/
     margin: 0 auto;
     width: 100%;
     overflow: hidden;
 }
 
 .svg-content {
-    display: inline-block;
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
@@ -41,20 +40,9 @@ a {
     display: block;
     position: relative;
     width: 90%;
-    height: 60px;
     margin: 0 auto;
-    padding: 0.5em 0 0.5em 0;
-    border-radius: 50px;
     line-height: 1.5;
 }
-
-
-/*.search {
-    padding-top: 1em;
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-}*/
 
 .intro {
     position: relative;
@@ -68,20 +56,17 @@ a {
 }
 
 .info-panel {
-    vertical-align: bottom;
-    display: inline-block;
-    margin: 0 auto;
-    padding-bottom: 0.25em;
-    padding-left: 1em;
-    padding-right: 1em;
-
-    max-height: 150px;
+    display: block;
+    margin: 0 1em 0 1em;
+    margin: 0 2vw 0 2vw;
+    padding: 0.5em 1.5em 0.5em 1.5em;
+    padding: 1vw 4vw 1vw 4vw;
+    max-height: 25vh;
     overflow: scroll;
-    
     background: #f9f9f9;
     border: 1px solid lightgray;
     border-radius: 30px;
-    
+    border-radius: 6vw;
     visibility: hidden;
 }
 
@@ -91,27 +76,38 @@ ul {
     text-align: center;
     font-style: italic;
     line-height: 2em;
-    font-size: 10pt;
 }
 
 .count {
     font-weight: bold;
 }
 
+.credits {
+    font-size: 6pt;
+    text-align: center;
+    margin-top: 1em;
+    display: block;
+}
+
+/* Mobile only settings */
+@media screen and (max-width: 480px) {
+}
+
+/* Desktop only settings */
 @media screen and (min-width: 480px) {
     html,
     body {
-        font-size: 10pt;
+        font-size: 11pt;
+        font-size: 1.2vw;
     }
     h1 {
         font-size: 18pt;
+        font-size: 3vw;
     }
     .svg-container {
-        display: inline-block;
         position: relative;
         width: 60%;
-        vertical-align: top;
-        overflow: hidden;
+        padding: 0;
         float: left;
     }
     .svg-content {
@@ -121,41 +117,22 @@ ul {
         left: 0;
     }
     .sidebar {
-        display: inline-block;
         position: relative;
-        float: right;
         width: 30%;
         margin-right: 5%;
-        border-radius: 50px;
         line-height: 1.5;
+        float: right;
     }
     .intro {
         position: absolute;
     }
     .info-panel {
-        max-height: 70vh;
-        overflow: scroll;
-        background: #f9f9f9;
-        border: 1px solid lightgray;
-        border-radius: 30px;
-        display: inline-block;
+        max-height: 50%;
         margin: 0 auto;
-        padding-top: 0.1em;
-        padding-bottom: 0.25em;
-        padding-left: 1em;
-        padding-right: 1em;
+        padding: 0.5em 1.5em 0.5em 1.5em;
+        padding: 1vh 2vw 1vh 2vw;
+        border-radius: 4vw;
         visibility: hidden;
         position: absolute;
     }
 }
-
-@media screen and (min-width: 800px) {
-    .sidebar {
-        padding-top: 5%;
-    }
-}
-
-/*.credits {
-    text-align: center;
-    font-size: 9pt;
-}*/

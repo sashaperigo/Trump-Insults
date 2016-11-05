@@ -6,36 +6,38 @@
     <title>Trump's Mean Tweets</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" type="text/css" media="all">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+    <!-- <script src="https://d3js.org/d3.v3.min.js"></script> -->
+    <script src="jquery.min.js"></script>
+    <script src="d3.min.js"></script>
+    <script src="underscore-min.js"></script>
 </head>
 
 <body>
     <div class="container">
         <div class="sidebar">
-            <h1>Trump's Mean Tweets</h1>
-            <p>Click on a bubble to read more about one of the <span class="total"></span> people Trump has insulted on Twitter since the start of his campaign.</p>
-<!--             <p></p>
-            <p>Based on an article from <a href="http://www.nytimes.com/interactive/2016/01/28/upshot/donald-trump-twitter-insults.html">The New York Times</a>. Bios retrieved from Wikipedia with the Google Knowledge Graph.</p>
+            <h1 class="title">Trump's Mean Tweets</h1>
+            <p class="instructions">Click on a bubble to read more about one of the <span class="total"></span> people Trump has insulted on Twitter since the start of his campaign.</p>
+            <!--             <p></p>
+            <p>Based on an article from <a href="http://www.nytimes.com/interactive/2016/01/28/upshot/donald-trump-twitter-insults.html">The New York Times</a>. Bios retrieved from Wikipedia with the Google Knowledge Graph.</p> -->
             <p></p>
-            <p>Made with ❤️  by <a href="">Sasha Perigo</a>.</p> -->
-            <div class="info-panel">
-                <h3 class="name"></h3>
-                <p class="bio"></p>
-                <p>Donald Trump has insulted <span class="name"></span> <span class="count"></span> since the start of his campaign.</p>
-                <p>Some choice insults include:</p>
-                <ul class="insults">
-                </ul>
+            <div class="info-panel-container">
+                <div class="info-panel">
+                    <h3 class="name"></h3>
+                    <p class="bio"></p>
+                    <p>Donald Trump has insulted <span class="name"></span> <span class="count"></span> since the start of his campaign.</p>
+                    <p>Some choice insults include:</p>
+                    <ul class="insults">
+                    </ul>
+                </div>
             </div>
-            <!--             <div class="credits">Made with ❤️  by <a href="">Sasha Perigo</a>. Data from <a href="http://www.nytimes.com/interactive/2016/01/28/upshot/donald-trump-twitter-insults.html">The New York Times</a>.</div> -->
         </div>
         <div id="container" class="svg-container">
             <script>
-            var WIDTH = 750;
-            var HEIGHT = 700;
+            // Finding these numbers involved LOTS of manual tinkering.
+            var WIDTH = 775;
+            var HEIGHT = 675;
             var BUBBLE_PADDING = 5;
-
-            var COLORS = ["lavender"]; // , #6BAFFC", "#E98ADD"];
 
             var MIN_START_RADIUS = 10;
             var MAX_START_RADIUS = 80;
@@ -51,7 +53,7 @@
 
             var svg = d3.select("div#container")
                 .append("svg")
-                .attr("viewBox", "0 0 750 700")
+                .attr("viewBox", "0 0 " + WIDTH + " " + HEIGHT)
                 .attr("preserveAspectRatio", "xMinYMin meet")
                 .classed("svg-content", true)
                 .attr("class", "bubble")
@@ -68,7 +70,7 @@
                 })
                 .padding(BUBBLE_PADDING);
 
-            d3.json("/Trump-Insults/data/data.json", function(data) {
+            d3.json("./data/data.json", function(data) {
                 data = {
                     children: data
                 };
@@ -89,15 +91,10 @@
 
                 node.append("circle")
                     .attr("r", function(d) {
-                        console.log(d);
                         return getStartRadius(d.count);
                     })
-                    .style("fill", function(d) {
-                        var index = Math.floor(Math.random() * COLORS.length);
-                        d.fill = COLORS[index];
-                        return d.fill;
-                    })
-                    .style("stroke", "gray") //function(d) { return d3.rgb(d.fill).darker(); })
+                    .style("fill", "lavender")
+                    .style("stroke", "gray")
                     .style("stroke-width", "1px");
 
                 node.append("text")
@@ -113,6 +110,26 @@
 
                 var total = d3.select(".total").text("" + node[0].length);
             });
+
+            // jQuery Formatting
+            function scaleSidebar() {
+                var leftHeight = $(".bubble").height();
+                $(".sidebar").css({
+                    'height': leftHeight
+                });
+
+                $(".info-panel").css({
+                    'max-height': (leftHeight * 0.5)
+                });
+            }
+
+            if (window.outerWidth < 480) {
+                $(".info-panel-container").insertAfter(".svg-container");
+            } else {
+                scaleSidebar();
+                var lazyLayout = _.debounce(scaleSidebar, 300);
+                $(window).resize(lazyLayout);
+            }
 
             function getTextSize(d) {
                 // TODO: Edge case for the parent node. Do something better here!
@@ -184,9 +201,7 @@
                         d.r = getStartRadius(d.count);
                         return d.r;
                     })
-                    .style("fill", function(d) {
-                        return d.fill;
-                    });
+                    .style("fill", "lavender");
                 node.select("text").transition()
                     .duration(TRANSITION_LENGTH)
                     .style("font-size", getTextSize);
@@ -242,15 +257,8 @@
                 isClicked = true;
                 selectedElement = node;
 
-                var windowSize = window.outerWidth;
-                if (windowSize < 480) {
-
-                    $(".svg-container").insertBefore(".info-panel");
-                } else {
-                    console.log("Hi!");
-                    var intro = d3.select(".intro");
-                    intro.style("visibility", "hidden");
-                }
+                var intro = d3.select(".intro");
+                intro.style("visibility", "hidden");
 
                 var panel = d3.select(".info-panel");
                 panel.style("visibility", "visible");
@@ -275,6 +283,7 @@
             </script>
         </div>
     </div>
+    <!--     <div class="credits">Made with ❤️ by <a href="">Sasha Perigo</a>. Data from <a href="http://www.nytimes.com/interactive/2016/01/28/upshot/donald-trump-twitter-insults.html">The New York Times</a>.</div> -->
 </body>
 
 </html>
