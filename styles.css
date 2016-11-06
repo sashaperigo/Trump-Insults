@@ -19,6 +19,7 @@ a {
 
 .container {
     display: block;
+    position: relative;
     margin: 0 auto;
 }
 
@@ -27,13 +28,6 @@ a {
     margin: 0 auto;
     width: 100%;
     overflow: hidden;
-}
-
-.svg-content {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
 .sidebar {
@@ -56,17 +50,21 @@ a {
 }
 
 .info-panel {
-    display: block;
-    margin: 0 1em 0 1em;
-    margin: 0 2vw 0 2vw;
-    padding: 0.5em 1.5em 0.5em 1.5em;
-    padding: 1vw 4vw 1vw 4vw;
-    max-height: 25vh;
-    overflow: scroll;
     background: #f9f9f9;
     border: 1px solid lightgray;
+
+    margin: 2em 1em 0 1em;
+    margin: 3vw 2vw 0 2vw;
+
+    padding: 0.5em 1.5em 0.5em 1.5em;
+    padding: 1vw 4vw 1vw 4vw;
+
     border-radius: 30px;
     border-radius: 6vw;
+
+    max-height: 25vh;
+    overflow: scroll;
+
     visibility: hidden;
 }
 
@@ -82,18 +80,13 @@ ul {
     font-weight: bold;
 }
 
-.credits {
-    font-size: 6pt;
-    text-align: center;
-    margin-top: 1em;
-    display: block;
-}
-
 /* Mobile only settings */
-@media screen and (max-width: 480px) {
-}
+
+@media screen and (max-width: 480px) {}
+
 
 /* Desktop only settings */
+
 @media screen and (min-width: 480px) {
     html,
     body {
